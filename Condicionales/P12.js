@@ -11,17 +11,20 @@ monto = parseInt(prompt('Ingrese el monto de la compra: '));
 
 switch (true) {
 
-    case (monto > 100):
-        factura = monto;
-        break;
-
-    case (monto <= 100 && monto >= 300):
+    case (monto >= 100 && monto <= 300):
         factura = monto - ((monto * 5) / 100);
         break;
 
-    case (monto < 300 && monto >= 500):
-        factura = monto - ((monto * 10) / 100)
+    case (monto > 300 && monto <= 500):
+        factura = (monto - ((monto * 10) / 100));
         break;
 
-    
+    case (monto > 500):
+        factura = monto - ((monto * 15) / 100);
+        break;
+
+    default:
+        factura = monto;
 }
+
+alert('El total a pagar es de: ' + factura)
